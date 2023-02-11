@@ -1,6 +1,8 @@
 
 package com.mycompany.viperbinaryseartree2nd;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author irad_allen
@@ -155,19 +157,39 @@ public class ViperBST {
     }
     
     public boolean isComplete() {
-        return isComplete(root, 0);
+        return isComplete(root);
     }
    
 
-    private boolean isComplete(VTreeNode tree, int index) {
+    private boolean isComplete(VTreeNode tree) {
        
         if (tree == null)
            return true;
-       
-        if(index > getNumNodes())
-           return false;
         
-        return false;//(isComplete(tree.getLeft(), 2 * index + 1) && isComplete(tree.getRight()ight, 2 * index + 2));
+        boolean isNotComplete = false;
+        
+        LinkedList<VTreeNode> Q = new LinkedList<VTreeNode>();
+        
+        Q.add(tree);
+        
+        while (!Q.isEmpty()){
+            VTreeNode node = Q.pollFirst();
+            if (node.getLeft() != null){
+                if (isNotComplete)
+                    return false;
+                Q.add(node.getLeft());
+            }
+            else
+                isNotComplete = true;
+            if (node.getRight() != null){
+                if (isNotComplete)
+                    return false;
+                Q.add(node.getRight());
+            }
+            else
+                isNotComplete = true;
+        }
+        return true;
     }
 
      @Override

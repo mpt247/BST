@@ -19,7 +19,7 @@ public class Viperbinaryseartree2nd {
         tree.add(15);
         tree.add(5);
         tree.add(2);
-//        tree.add(7);
+        tree.add(7);
         tree.add(17);
         tree.add(12);
         
