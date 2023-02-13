@@ -34,7 +34,9 @@ public class ViperBST {
 
         return tree;
     }
-    
+    public VTreeNode getRootNode() {
+        return root;
+    }
     public String inOrder(){
         return inOrder(root);
     }
@@ -117,7 +119,7 @@ public class ViperBST {
         return getNumLeaves(root, count);
     }
     
-    public int getNumLeaves(VTreeNode tree, int count) {
+    private int getNumLeaves(VTreeNode tree, int count) {
         
         if(tree==null) 
             return 0;
@@ -132,7 +134,7 @@ public class ViperBST {
         return count;
     }
     
-    public int getNumNodes () {
+    public int getNumNodes() {
         
         return getNumNodes(root);
     }

@@ -228,8 +228,16 @@ public class BSTGrapgics extends javax.swing.JFrame {
         //graphic update
         tree.add(Integer.parseInt(TextField.getText()));
         ((GraphicPanel) tree_panel).processData(tree);
+        
+        updateTreeStats();
+        cleanInput();
+    }//GEN-LAST:event_add_buttonActionPerformed
+
+    private void cleanInput() {
         TextField.setText("");
-        // data update
+    }
+    
+    private void updateTreeStats() {
         height_data.setText(tree.getHeight() + "");
         levels_data.setText(tree.getNumLevels() + "");
         leaves_data.setText(tree.getNumLeaves() + "");
@@ -240,9 +248,8 @@ public class BSTGrapgics extends javax.swing.JFrame {
         tree_inOrder.setText(tree.inOrder());
         tree_preOrder.setText(tree.preOrder());
         tree_postOrder.setText(tree.postOrder());
-        
-    }//GEN-LAST:event_add_buttonActionPerformed
-
+    }
+    
     /**
      * @param args the command line arguments
      */
